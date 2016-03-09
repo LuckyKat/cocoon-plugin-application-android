@@ -2,6 +2,7 @@ package com.ludei;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import org.apache.cordova.ConfigXmlParser;
 import org.apache.cordova.PluginEntry;
@@ -47,6 +48,8 @@ public class CocoonApp extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+
+        MultiDex.install(this);
 
         ConfigXmlParser parser = new ConfigXmlParser();
         parser.parse(this);

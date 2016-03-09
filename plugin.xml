@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cocoon-plugin-application-android"
-    version="1.0.2">
+    version="1.0.3">
 
     <name>Cocoon Android Application plugin</name>
     <description>Cocoon plugin to add support for Android Application life cycle methods.</description>
@@ -23,4 +23,6 @@
 
         <source-file src="src/CocoonApp.java" target-dir="src/com/ludei" />
     </platform>
+
+    <framework src="libs/multidex.gradle" custom="true" type="gradleReference" />
 </plugin>

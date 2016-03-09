@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-application-android",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Android Application plugin",
   "cordova": {
     "id": "cocoon-plugin-application-android",
