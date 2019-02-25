@@ -8,6 +8,10 @@ module.exports = function(context) {
         return;
 
     var manifest_xml = path.join(context.opts.projectRoot, 'platforms', 'android','AndroidManifest.xml');
+    if (!fs.existsSync(manifest_xml)) {
+        // try cordova >=7 path
+        manifest_xml = path.join(context.opts.projectRoot, 'platforms', 'android', 'app', 'src', 'main', 'AndroidManifest.xml');
+    }
     var et = context.requireCordovaModule('elementtree');
 
     var data = fs.readFileSync(manifest_xml).toString();
@@ -19,4 +23,4 @@ module.exports = function(context) {
 
     data = etree.write({'indent': 4});
     fs.writeFileSync(manifest_xml, data);
-}
+};
